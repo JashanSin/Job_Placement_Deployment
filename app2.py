@@ -109,6 +109,8 @@ print('Average accuracy score: {:.2f}'.format(scores.mean()))
 y_pred = model.predict(X_test)
 #prediction_probabilities = classifier.predict_proba(df)
 
+target_array = df_clean['status'].values
+
 st.subheader('Prediction')
 st.write(target_array[y_pred])
 
