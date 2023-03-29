@@ -49,40 +49,24 @@ X = df_clean.iloc[:,:9]
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=40, train_size = .75)
 from sklearn.linear_model import LogisticRegression
-model = LogisticRegression()
-model.fit(X_train, y_train)
 
 
 import streamlit as st
-y_pred = model.predict(X_test)
-#prediction_probabilities = classifier.predict_proba(df)
 
-st.subheader('Prediction')
-st.write(y[y_pred])
-
-st.subheader('Class labels and their corresponding index number')
-st.write(y)
 
 
 from sklearn.metrics import accuracy_score, confusion_matrix
-accuracy = accuracy_score(y_test, y_pred)
-confusion_mat = confusion_matrix(y_test, y_pred)
-print(accuracy)
-print("Accuracy: %.2f%%" % (accuracy * 100.0))
-print(confusion_mat)
-from sklearn.model_selection import cross_val_score, KFold
-cv = KFold(n_splits=5, shuffle=True, random_state=42)
-scores = cross_val_score(model, X, y, cv=cv, scoring='accuracy')
-# Print the average score across all folds
-print('Average accuracy score: {:.2f}'.format(scores.mean()))
 
+
+from sklearn.model_selection import cross_val_score, KFold
 
 import numpy as np
+import streamlit as st
 import pandas as pd
 from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
 
-st.write(''' # Job Placement Prediction App''')
+st.write(''' # Simple Iris Flower Prediction App''')
 
 st.sidebar.header('User Input Parameters')
 
@@ -112,6 +96,27 @@ def user_input_features():
   return features
 
 df1 = user_input_features()
+
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+cv = KFold(n_splits=5, shuffle=True, random_state=42)
+scores = cross_val_score(model, X, y, cv=cv, scoring='accuracy')
+# Print the average score across all folds
+print('Average accuracy score: {:.2f}'.format(scores.mean()))
+
+y_pred = model.predict(X_test)
+#prediction_probabilities = classifier.predict_proba(df)
+
+st.subheader('Prediction')
+st.write(y[y_pred])
+
+st.subheader('Class labels and their corresponding index number')
+st.write(y)
+
+#st.subheader('Prediction Probability')
+#st.write(prediction_probabilities)
 
 st.subheader('User Input Parameters')
 st.write(df1)
