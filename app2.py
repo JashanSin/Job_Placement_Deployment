@@ -110,7 +110,7 @@ model = LogisticRegression()
 model.fit(X_train, y_train)
 
 # Model Prediction
-prediction = model.predict(df)
+prediction = model.predict(X_test)
 
 # Output
 status = le.inverse_transform(prediction)[0]
