@@ -40,33 +40,25 @@ lab = LabelEncoder()
 df_clean['gender'] = lab.fit_transform(df_clean['gender'])
 df_clean['work_experience'] = lab.fit_transform(df_clean['work_experience'])
 df_clean['specialisation'] = lab.fit_transform(df_clean['specialisation'])
-df_clean['status'] = lab.fit_transform(df_clean['status'])
+#df_clean['status'] = lab.fit_transform(df_clean['status'])
 df_clean['ssc_board'] = lab.fit_transform(df_clean['ssc_board'])
 df_clean['undergrad_degree'] = lab.fit_transform(df_clean['undergrad_degree'])
 df_clean.head(5)
-y = df_clean['status']
-X = df_clean.iloc[:,:9]
+
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=40, train_size = .75)
+
 from sklearn.linear_model import LogisticRegression
 
-
-import streamlit as st
-
-
-
-from sklearn.metrics import accuracy_score, confusion_matrix
-
-
-from sklearn.model_selection import cross_val_score, KFold
 
 import numpy as np
 import streamlit as st
 import pandas as pd
 from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
 
-st.write(''' # Job Placement Prediction App''')
+st.title("Job Placement Prediction")
 
 st.sidebar.header('User Input Parameters')
 
@@ -95,30 +87,35 @@ def user_input_features():
 
   return features
 
-df1 = user_input_features()
+df = user_input_features()
 
+st.subheader('User Input Parameters')
+st.write(df)
+
+
+X = df_clean.loc[:, ['gender', 'ssc_percentage', 'ssc_board', 'hsc_percentage',
+       'degree_percentage', 'undergrad_degree', 'work_experience',
+       'emp_test_percentage', 'specialisation']]
+y = df_clean['status']
+
+# Encode the Target variable
+le = LabelEncoder()
+y = le.fit_transform(y)
+
+# Train/Test Split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Model Training
 from sklearn.linear_model import LogisticRegression
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
-cv = KFold(n_splits=5, shuffle=True, random_state=42)
-scores = cross_val_score(model, X, y, cv=cv, scoring='accuracy')
-# Print the average score across all folds
-print('Average accuracy score: {:.2f}'.format(scores.mean()))
+# Model Prediction
+prediction = model.predict(X_test)
 
-y_pred = model.predict(df1)
-#prediction_probabilities = classifier.predict_proba(df)
-
-target_array = df_clean['status'].values
-
-st.subheader('Prediction')
-st.write(target_array[y_pred])
-
-st.subheader('Class labels and their corresponding index number')
-st.write(y)
-
-#st.subheader('Prediction Probability')
-#st.write(prediction_probabilities)
-
-st.subheader('User Input Parameters')
-st.write(df1)
+# Output
+status = le.inverse_transform(prediction)[0]
+if status == "Placed":
+    st.success("This student is likely to enroll.")
+else:
+    st.error("This student is likely not placed.")
