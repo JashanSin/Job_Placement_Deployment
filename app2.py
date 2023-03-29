@@ -106,7 +106,7 @@ scores = cross_val_score(model, X, y, cv=cv, scoring='accuracy')
 # Print the average score across all folds
 print('Average accuracy score: {:.2f}'.format(scores.mean()))
 
-y_pred = model.predict(X_test)
+y_pred = model.predict(df1)
 #prediction_probabilities = classifier.predict_proba(df)
 
 target_array = df_clean['status'].values
