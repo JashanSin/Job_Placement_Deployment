@@ -63,15 +63,15 @@ st.title("Job Placement Prediction")
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-  gender = st.sidebar.slider('gender', 0.0, 1.0, 0.6)
-  ssc_percentage = st.sidebar.slider('ssc_percentage', 40.8,89.4, 67.3)
-  ssc_board = st.sidebar.slider('ssc_board', 0.0, 1.0, 0.4)
-  hsc_percentage = st.sidebar.slider('hsc_percentage', 37.0, 97.7, 66.3)
-  degree_percentage = st.sidebar.slider('degree_percentage', 50.0,97.0, 66.3)
-  undergrad_degree = st.sidebar.slider('undergrad_degree', 0.0,2.0 , 0.6)
-  work_experience = st.sidebar.slider('work_experience', 0.0, 1.0, 0.3)
-  emp_test_percentage = st.sidebar.slider('emp_test_percentage', 50.0, 98.0, 72.1)
-  specialisation = st.sidebar.slider('specialisation', 0.0, 1.0, 0.4)
+  #gender = st.sidebar.slider('gender', 0.0, 1.0, 0.6)
+  #ssc_percentage = st.sidebar.slider('ssc_percentage', 40.8,89.4, 67.3)
+  #ssc_board = st.sidebar.slider('ssc_board', 0.0, 1.0, 0.4)
+  #hsc_percentage = st.sidebar.slider('hsc_percentage', 37.0, 97.7, 66.3)
+  #degree_percentage = st.sidebar.slider('degree_percentage', 50.0,97.0, 66.3)
+  #undergrad_degree = st.sidebar.slider('undergrad_degree', 0.0,2.0 , 0.6)
+  #work_experience = st.sidebar.slider('work_experience', 0.0, 1.0, 0.3)
+  #emp_test_percentage = st.sidebar.slider('emp_test_percentage', 50.0, 98.0, 72.1)
+  #specialisation = st.sidebar.slider('specialisation', 0.0, 1.0, 0.4)
 
   user_input_data = {'gender': gender,
                ' ssc_percentage': ssc_percentage,
