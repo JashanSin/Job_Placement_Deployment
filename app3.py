@@ -7,7 +7,6 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score, recall_score, f1_score
 
 df = pd.read_csv('Job_Placement_Data.csv')
-df
 
 df_clean = df.copy()
 
@@ -50,7 +49,6 @@ df_clean['specialisation'] = lab.fit_transform(df_clean['specialisation'])
 #df_clean['status'] = lab.fit_transform(df_clean['status'])
 df_clean['ssc_board'] = lab.fit_transform(df_clean['ssc_board'])
 df_clean['undergrad_degree'] = lab.fit_transform(df_clean['undergrad_degree'])
-df_clean.head(5)
 
 import streamlit as st
 
