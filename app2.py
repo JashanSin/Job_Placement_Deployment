@@ -53,7 +53,7 @@ model = LogisticRegression()
 model.fit(X_train, y_train)
 
 
-
+import streamlit as st
 y_pred = model.predict(X_test)
 #prediction_probabilities = classifier.predict_proba(df)
 
@@ -78,7 +78,6 @@ print('Average accuracy score: {:.2f}'.format(scores.mean()))
 
 
 import numpy as np
-import streamlit as st
 import pandas as pd
 from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
