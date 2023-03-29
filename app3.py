@@ -121,8 +121,8 @@ st.subheader('Prediction')
 st.write(target_array[prediction])
 
 prediction_probabilities = model.predict_proba(df)
-st.subheader('Class labels and their corresponding index number')
-st.write(target_array)
+#st.subheader('Class labels and their corresponding index number')
+#st.write(target_array)
 
 st.subheader('Prediction Probability')
 st.write(prediction_probabilities)
