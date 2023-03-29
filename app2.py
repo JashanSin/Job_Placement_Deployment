@@ -110,7 +110,7 @@ y_pred = model.predict(X_test)
 #prediction_probabilities = classifier.predict_proba(df)
 
 st.subheader('Prediction')
-st.write(y[y_pred])
+st.write(target_array[y_pred])
 
 st.subheader('Class labels and their corresponding index number')
 st.write(y)
