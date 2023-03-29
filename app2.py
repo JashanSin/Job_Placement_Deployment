@@ -62,7 +62,7 @@ st.title("Job Placement Prediction")
 
 st.sidebar.header('User Input Parameters')
 
-def user_input_features():
+
   #gender = st.sidebar.slider('gender', 0.0, 1.0, 0.6)
   #ssc_percentage = st.sidebar.slider('ssc_percentage', 40.8,89.4, 67.3)
   #ssc_board = st.sidebar.slider('ssc_board', 0.0, 1.0, 0.4)
@@ -72,7 +72,7 @@ def user_input_features():
   #work_experience = st.sidebar.slider('work_experience', 0.0, 1.0, 0.3)
   #emp_test_percentage = st.sidebar.slider('emp_test_percentage', 50.0, 98.0, 72.1)
   #specialisation = st.sidebar.slider('specialisation', 0.0, 1.0, 0.4)
-
+def user_input_features():
   user_input_data = {'gender': gender,
                ' ssc_percentage': ssc_percentage,
                'ssc_board': ssc_board,
@@ -111,7 +111,7 @@ model = LogisticRegression()
 model.fit(X_train, y_train)
 
 # Model Prediction
-prediction = model.predict(X_test)
+prediction = model.predict(df)
 
 # Output
 status = le.inverse_transform(prediction)[0]
