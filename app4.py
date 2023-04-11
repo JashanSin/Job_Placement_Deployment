@@ -72,10 +72,10 @@ st.title("Find Your Vision")
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-  Education_Level = st.sidebar.slider('Education_Level', 0.0, 1.0, 0.6)
-  Number_of_years_experience = st.sidebar.slider('Number_of_years_experience', 40.8,89.4, 67.3)
-  Skills_and_abilities = st.sidebar.slider('Skills_and_abilities', 0.0, 1.0, 0.4)
-  Salary = st.sidebar.slider('Salary', 37.0, 97.7, 66.3)
+  Education_Level = st.sidebar.slider('Education_Level', 0.0, 2.0, 1.0)
+  Number_of_years_experience = st.sidebar.slider('Number_of_years_experience', 0.0, 2.0, <10)
+  Skills_and_abilities = st.sidebar.slider('Skills_and_abilities', 0.0, 2.0, 0.5)
+  Salary = st.sidebar.slider('Salary', 10.0, 97.7, 25.3)
 
   user_input_data = {'Education_Level': Education_Level,
                'Number_of_years_experience': Number_of_years_experience,
