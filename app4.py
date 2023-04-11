@@ -73,7 +73,7 @@ st.sidebar.header('User Input Parameters')
 
 def user_input_features():
   Education_Level = st.sidebar.slider('Education_Level', 0.0, 2.0, 1.0)
-  Number_of_years_experience = st.sidebar.slider('Number_of_years_experience', 0.0, 2.0, 10)
+  Number_of_years_experience = st.sidebar.slider('Number_of_years_experience', 0.0, 2.0, 1.0)
   Skills_and_abilities = st.sidebar.slider('Skills_and_abilities', 0.0, 2.0, 0.5)
   Salary = st.sidebar.slider('Salary', 10.0, 97.7, 25.3)
 
