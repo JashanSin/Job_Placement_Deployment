@@ -45,7 +45,8 @@ To get started with our project, clone the repository and install the required d
 
 Our team consists of the following members:
 
-[Uchenna Mgbaja](https://www.linkedin.com/in/jashansingh2907/)
+[Jashan Singh](https://www.linkedin.com/in/jashansingh2907/)
+[Puneet Singh Karir]
 
 
 
