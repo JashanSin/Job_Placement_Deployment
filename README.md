@@ -39,7 +39,7 @@ To get started with our project, clone the repository and install the required d
 
 ### Link to Application
 
-[Link to Demo 1](https://mazon1-apps-appapp-8sfsyx.streamlit.app/)
+[Link to Demo](https://pskarir-ml-project-update-app-zovpsq.streamlit.app/#prediction)
 
 ### Team Members
 
