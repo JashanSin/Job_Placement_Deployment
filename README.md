@@ -49,5 +49,3 @@ Our team consists of the following members:
 
 
 
-0 Github ReadME Template.txt
-Displaying 0 Github ReadME Template.txt.
