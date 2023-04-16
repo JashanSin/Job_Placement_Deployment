@@ -80,7 +80,7 @@ def user_input_features():
   user_input_data = {'Education_Level': Education_Level,
                'Number_of_years_experience': Number_of_years_experience,
                'Skills_and_abilities': Skills_and_abilities,
-                Salary: Performance_in_Solving_tough_problem,
+               'Performance_in_Solving_tough_problem': Performance_in_Solving_tough_problem,
                }
 
   features = pd.DataFrame(user_input_data, index=[0])
