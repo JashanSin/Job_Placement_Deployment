@@ -51,7 +51,7 @@ import streamlit as st
 df_clean.rename(columns = {'gender':'Education_Level'}, inplace = True)
 df_clean.rename(columns = {'ssc_percentage':'Number_of_years_experience'}, inplace = True)
 df_clean.rename(columns = {'ssc_board':'Skills_and_abilities'}, inplace = True)
-df_clean.rename(columns = {'Performance':'Performance_in_Solving_tough_problem'}, inplace = True)
+df_clean.rename(columns = {'hsc_percentage':'Performance_in_Solving_tough_problem'}, inplace = True)
 df_clean.rename(columns = {'status':'Business_or_Tech'}, inplace = True)
 
 df_clean = df_clean.drop(columns=['degree_percentage', 'undergrad_degree', 'work_experience',
