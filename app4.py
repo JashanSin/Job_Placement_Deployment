@@ -51,7 +51,7 @@ import streamlit as st
 df_clean.rename(columns = {'gender':'Education_Level'}, inplace = True)
 df_clean.rename(columns = {'ssc_percentage':'Number_of_years_experience'}, inplace = True)
 df_clean.rename(columns = {'ssc_board':'Skills_and_abilities'}, inplace = True)
-df_clean.rename(columns = {'hsc_percentage':'Salary'}, inplace = True)
+df_clean.rename(columns = {'Performance ':'Performance_in_Solving_tough_problem'}, inplace = True)
 df_clean.rename(columns = {'status':'Business_or_Tech'}, inplace = True)
 
 df_clean = df_clean.drop(columns=['degree_percentage', 'undergrad_degree', 'work_experience',
@@ -73,14 +73,14 @@ st.sidebar.header('User Input Parameters')
 
 def user_input_features():
   Education_Level = st.sidebar.slider('Education_Level', 0.0, 2.0, 1.0)
-  Number_of_years_experience = st.sidebar.slider('Number_of_years_experience', 0.0, 2.0, 1.0)
+  Number_of_years_experience = st.sidebar.slider('Number_of_years_experience', 0.0, 20.0, 10.0)
   Skills_and_abilities = st.sidebar.slider('Skills_and_abilities', 0.0, 2.0, 0.5)
-  Salary = st.sidebar.slider('Salary', 10.0, 97.7, 25.3)
+  Performance_in_Solving_tough_problem = st.sidebar.slider('Performance_in_Solving_tough_problem', 0.0, 2.0, 1.0)
 
   user_input_data = {'Education_Level': Education_Level,
                'Number_of_years_experience': Number_of_years_experience,
                'Skills_and_abilities': Skills_and_abilities,
-               'Salary': Salary,
+                Salary: Performance_in_Solving_tough_problem,
                }
 
   features = pd.DataFrame(user_input_data, index=[0])
@@ -93,7 +93,7 @@ st.subheader('User Input Parameters')
 st.write(df)
 
 
-X = df_clean.loc[:, ['Education_Level', 'Number_of_years_experience', 'Skills_and_abilities', 'Salary']]
+X = df_clean.loc[:, ['Education_Level', 'Number_of_years_experience', 'Skills_and_abilities', 'Performance_in_Solving_tough_problem']]
 y = df_clean['Business_or_Tech']
 
 # Encode the Target variable
