@@ -73,9 +73,9 @@ st.sidebar.header('User Input Parameters')
 
 def user_input_features():
   Education_Level = st.sidebar.slider('Education_Level', 0.0, 2.0, 1.0)
-  Number_of_years_experience = st.sidebar.slider('Number_of_years_experience', 0.0, 1.0, 0.5)
-  Skills_and_abilities = st.sidebar.slider('Skills_and_abilities', 0.0, 2.0, 1.0)
-  Performance_in_Solving_tough_problem = st.sidebar.slider('Performance_in_Solving_tough_problem', 10.0, 50.0, 100.0)
+  Number_of_years_experience = st.sidebar.slider('Number_of_years_experience', 10.0,89.4, 67.3)
+  Skills_and_abilities = st.sidebar.slider('Skills_and_abilities', 0.0, 1.0, 0.4)
+  Performance_in_Solving_tough_problem = st.sidebar.slider('Performance_in_Solving_tough_problem', 37.0, 97.7, 66.3)
 
   user_input_data = {'Education_Level': Education_Level,
                'Number_of_years_experience': Number_of_years_experience,
