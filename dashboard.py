@@ -2,7 +2,7 @@ import streamlit as st
 import plotly.express as px
 
 def app():
-    st.image('./Streamlit_UI/Header.png', use_column_width=True)
+    st.image('./Streamlit_UI/Noruest College.png', use_column_width=True)
 
     st.subheader("💡 Abstract:")
 
